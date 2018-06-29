@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <SCRIPT LANGUAGE="JavaScript">
+        function dumpInfo(form) {
+            var nameValue = document.getElementById("name").value;
+            var emailValue = document.getElementById("email").value;
+            var phoneValue = document.getElementById("phone").value;
+            var commentValue = document.getElementById("comment").value;
+            var checkValue = document.getElementById("check").value;
+            var result = document.getElementById("result");
+
+            result.value = nameValue + " " + emailValue + " " + phoneValue + " " + commentValue + " " + checkValue;
+            console.log(nameValue + " " + emailValue + " " + phoneValue + " " + commentValue + " " + checkValue);
+        }
+    </SCRIPT>
+
+    <form name="leads">
+        Name:<br>
+        <input type="text" id="name" name="name">
+        <br> Email:
+        <br>
+        <input type="text" id="email" name="email">
+        <br> Phone:
+        <br>
+        <input type="text" id="phone" name="phone">
+        <br>
+        <textarea id="message" name="message">Enter comment here...</textarea>
+        <br>
+        <input type="checkbox" id="check" name="check">
+        <input type="submit" id="button" name="button" value="Click" onclick="dumpInfo(this.form)">
+
+    </form>
+    <testarea id="result" name="result"></testarea>
+
+</body>
+
+</html>
