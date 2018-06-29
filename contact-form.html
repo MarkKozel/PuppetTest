@@ -11,11 +11,11 @@
 <body>
 
     <SCRIPT LANGUAGE="JavaScript">
-        function dumpInfo(form) {
+        function dumpInfo() {
             var nameValue = document.getElementById("name").value;
             var emailValue = document.getElementById("email").value;
             var phoneValue = document.getElementById("phone").value;
-            var commentValue = document.getElementById("comment").value;
+            var commentValue = document.getElementById("message").value;
             var checkValue = document.getElementById("check").value;
             var result = document.getElementById("result");
 
@@ -24,7 +24,7 @@
         }
     </SCRIPT>
 
-    <form name="leads">
+    <form name="contact-form">
         Name:<br>
         <input type="text" id="name" name="name">
         <br> Email:
@@ -37,7 +37,7 @@
         <textarea id="message" name="message">Enter comment here...</textarea>
         <br>
         <input type="checkbox" id="check" name="check">
-        <input type="submit" id="button" name="button" value="Click" onclick="dumpInfo(this.form)">
+        <button type="submit" name="submitform" value="Submit" onclick="dumpInfo()">
 
     </form>
     <testarea id="result" name="result"></testarea>

@@ -1,7 +1,8 @@
 import faker from "faker";
 import puppeteer from "puppeteer";
 
-const APP = "http://192.168.170.249/contact-form.html";
+// const APP = "http://192.168.170.249/contact-form.html";
+const APP = "file:///C:/Users/Mark/Development/Projects/web/PuppetTest/contact-form.html";
 
 const lead = {
     name: faker.name.firstName(),
@@ -18,7 +19,7 @@ const height = 1080;
 beforeAll(async() => {
     browser = await puppeteer.launch({
         headless: false,
-        slowMo: 80,
+        slowMo: 20,
         args: [`--window-size=${width},${height}`]
     });
     page = await browser.newPage();
@@ -31,7 +32,7 @@ afterAll(() => {
 describe("Contact form", () => {
     test("lead can submit a contact request", async() => {
         await page.goto(APP);
-        await page.waitForSelector("[data-test=contact-form]");
+        await page.waitForSelector('form');
         await page.click("input[name=name]");
         await page.type("input[name=name]", lead.name);
         await page.click("input[name=email]");
@@ -42,6 +43,6 @@ describe("Contact form", () => {
         await page.type("textarea[name=message]", lead.message);
         await page.click("input[type=checkbox]");
         await page.click("button[type=submit]");
-        await page.waitForSelector(".modal");
+        // await page.waitForSelector(".modal");
     }, 16000);
 });
