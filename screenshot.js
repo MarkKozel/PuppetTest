@@ -27,8 +27,8 @@ const lead = {
 
 const APP = "file:///C:/Users/Mark/Development/Projects/web/PuppetTest/contact-form.html";
 // const APP = "https://google.com";
-const width = 1920;
-const height = 1080;
+const width = 600;
+const height = 800;
 
 (async() => {
     // const browser = await puppeteer.launch();
@@ -54,5 +54,7 @@ const height = 1080;
     await page.click("input[type=checkbox]");
 
     await page.screenshot({ path: 'example.png' });
+    // await page.pdf({ path: 'report.pdf' });
+
     await browser.close();
 })();
